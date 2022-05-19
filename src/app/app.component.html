@@ -1,2 +1,17 @@
 <hello name="{{ name }}"></hello>
 <hr />
+<div *ngIf="!auth">
+  <div>User</div>
+  <div><input type="text" [(ngModel)]="login" /></div>
+
+  <div>Senha</div>
+  <div><input type="password" [(ngModel)]="password" /></div>
+  <hr />
+
+  <div><input type="button" value="Entrar" (click)="postLogin()" /></div>
+</div>
+
+<div *ngIf="auth">
+  Bem vindo, {{ auth.username }}
+  <input type="button" value="Sair" (click)="postLogout()" />
+</div>
