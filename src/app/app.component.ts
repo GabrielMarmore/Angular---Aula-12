@@ -17,7 +17,7 @@ export class AppComponent {
   site = 'https://shrouded-taiga-44081.herokuapp.com';
 
   login = 'admin';
-  password = '123456';
+  password = '';
 
   auth = null;
 
