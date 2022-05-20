@@ -21,20 +21,33 @@ export class AppComponent {
 
   auth = null;
 
+  list = null;
+
   constructor(private http: HttpClient) {}
 
   postLogin() {
     this.http
       .post<Auth>(this.site + '/login', {
         login: this.login,
-        senha: this.password,
+        password: this.password,
       })
       .subscribe((data) => {
         this.auth = data;
       });
+    console.log();
   }
 
   postLogout() {
     this.auth = null;
+  }
+
+  getList() {
+    this.http
+      .get<any>(this.site + '/api/v1/users', {
+        headers: { Authorization: 'Bearer ' + this.auth.token },
+      })
+      .subscribe((data) => {
+        this.list = data;
+      });
   }
 }

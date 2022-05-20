@@ -14,4 +14,23 @@
 <div *ngIf="auth">
   Bem vindo, {{ auth.username }}
   <input type="button" value="Sair" (click)="postLogout()" />
+  <div>
+    <input type="button" value="Atualizar" (click)="getList()" />
+    <div *ngIf="list">
+      <h2>Lista de usuarios cadastrados</h2>
+
+      <table border="1">
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Telefone</th>
+        </tr>
+        <tr *ngFor="let user of list">
+          <td>{{ user['id'] }}</td>
+          <td>{{ user['name'] }}</td>
+          <td>{{ user['phone'] }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
