@@ -14,7 +14,7 @@ interface Auth {
 })
 export class AppComponent {
   name = 'Aula 12';
-  site = 'https://shrouded-taiga-44081.herokuapp.com';
+  site = 'https://protected-fortress-44116.herokuapp.com';
 
   login = 'admin';
   password = '';
